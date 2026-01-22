@@ -18,9 +18,5 @@ module SpreePaypalExpress
     end
 
     config.to_prepare &method(:activate).to_proc
-
-    initializer "spree.paypal_express.payment_methods", :after => "spree.register.payment_methods" do |app|
-      app.config.spree.payment_methods << Spree::Gateway::PayPalExpress
-    end
   end
 end
